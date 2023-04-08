@@ -13,14 +13,16 @@ class Api {
 
     getDefaultCards() {
         return fetch(`${this._link}/cards`, {
-            headers: this._headers
+            headers: this._headers,
+            credentials: 'include',
         })
             .then(cards => this._renderResult(cards))
     }
 
     getUserInfo() {
         return fetch(`${this._link}/users/me`, {
-            headers: this._headers
+            headers: this._headers,
+            credentials: 'include',
         })
             .then(info => this._renderResult(info))
 
@@ -30,7 +32,8 @@ class Api {
         return fetch(`${this._link}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
-            body: JSON.stringify(newInfo)
+            body: JSON.stringify(newInfo),
+            credentials: 'include',
         })
             .then(info => this._renderResult(info))
     }
@@ -39,7 +42,8 @@ class Api {
         return fetch(`${this._link}/cards`, {
             method: 'POST',
             headers: this._headers,
-            body: JSON.stringify(cardData)
+            body: JSON.stringify(cardData),
+            credentials: 'include',
         })
             .then(card => this._renderResult(card))
     }
@@ -47,7 +51,8 @@ class Api {
     deleteCard(cardId) {
         return fetch(`${this._link}/cards/${cardId}`, {
             method: 'DELETE',
-            headers: this._headers
+            headers: this._headers,
+            credentials: 'include',
         })
             .then(res => this._renderResult(res))
     }
@@ -57,13 +62,15 @@ class Api {
         if (!isLiked) {
             return fetch(`${this._link}/cards/${cardId}/likes`, {
                 method: 'PUT',
-                headers: this._headers
+                headers: this._headers,
+                credentials: 'include',
             })
                 .then(like => this._renderResult(like))
         } else {
             return fetch(`${this._link}/cards/${cardId}/likes`, {
                 method: 'DELETE',
-                headers: this._headers
+                headers: this._headers,
+                credentials: 'include',
             })
                 .then(like => this._renderResult(like))
         }
@@ -73,18 +80,20 @@ class Api {
         return fetch(`${this._link}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
-            body: JSON.stringify(newAvatar)
+            body: JSON.stringify(newAvatar),
+            credentials: 'include',
         })
             .then(res => this._renderResult(res))
     }
 }
 
 const api = new Api({
-    link: 'https://mesto.nomoreparties.co/v1/cohort-56',
+    link: 'http://localhost:3000',
     headers: {
-        authorization: 'b4e5eaca-bb60-4b52-a5a4-33fbaf439073',
+        // authorization: 'b4e5eaca-bb60-4b52-a5a4-33fbaf439073',
         'Content-Type': 'application/json'
-    }
+    },
+    // credentials: 'include',
 });
 
 export default api;

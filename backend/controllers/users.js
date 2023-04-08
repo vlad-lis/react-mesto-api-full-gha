@@ -49,6 +49,20 @@ module.exports.login = (req, res, next) => {
     .catch(next);
 };
 
+// logout
+module.exports.logout = (req, res, next) => {
+  try {
+    res.clearCookie('jwt', {
+      httpOnly: true,
+      sameSite: true,
+    })
+      .send({ message: 'logout success' })
+      .end();
+  } catch (err) {
+    next(err);
+  }
+};
+
 // create user
 module.exports.createUser = (req, res, next) => {
   const {

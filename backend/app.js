@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
@@ -11,6 +12,11 @@ const { INTERNAL_SERVER_ERROR } = require('./utils/constants');
 const app = express();
 const { PORT = 3000 } = process.env;
 
+const corsConfig = {
+  credentials: true,
+  origin: true,
+};
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -20,6 +26,7 @@ const limiter = rateLimit({
 
 app.use(limiter);
 app.use(helmet());
+app.use(cors(corsConfig));
 app.use(express.json());
 app.use(cookieParser());
 

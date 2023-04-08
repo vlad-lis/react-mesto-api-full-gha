@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import addButton from '../images/add-button.svg';
 import Card from './Card';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
@@ -39,12 +39,12 @@ function Main(props) {
                 <ul className="elements__list">
                     {props.cards.map((newCard) => {
                         return (
-                            <Card 
-                            card={newCard}
-                            key={newCard._id}
-                            onCardClick={props.onCardClick}
-                            onCardLike={props.onCardLike}
-                            onCardDelete={props.onCardDelete}/>
+                            <Card
+                                card={newCard}
+                                key={newCard._id}
+                                onCardClick={props.onCardClick}
+                                onCardLike={props.onCardLike}
+                                onCardDelete={props.onCardDelete} />
                         )
                     })}
                 </ul>

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { celebrate, Joi, errors } = require('celebrate');
-const { login, createUser } = require('../controllers/users');
+const { login, createUser, logout } = require('../controllers/users');
 const { urlRegex } = require('../utils/constants');
 
 router.post('/signin', celebrate({
@@ -19,6 +19,8 @@ router.post('/signup', celebrate({
     password: Joi.string().required(),
   }),
 }), createUser);
+
+router.post('/signout', logout);
 
 router.use(errors());
 

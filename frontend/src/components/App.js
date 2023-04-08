@@ -32,30 +32,25 @@ function App() {
   const [email, setEmail] = useState('')
 
   useEffect(() => {
-    checkToken();
+    auth.checkAuth()
+      .then((data) => {
+        setIsLoggedIn(true);
+        setEmail(data.email);
+        navigate('/', { replace: true })
+      })
+      .catch(err => console.log(err));
+  }, [navigate]);
+
+  useEffect(() => {
     if (isLoggedIn) {
       Promise.all([api.getUserInfo(), api.getDefaultCards()])
         .then(([user, cards]) => {
           setCurrentUser(user);
-          setCards(cards)
+          setCards(cards);
         })
         .catch(err => console.log(err));
     }
   }, [isLoggedIn])
-
-  function checkToken() {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      auth
-        .checkToken(jwt)
-        .then((res) => {
-          setIsLoggedIn(true);
-          setEmail(res.data.email);
-          navigate('/', { replace: true })
-        })
-        .catch(err => console.log(err));
-    }
-  }
 
   function handleEditAvatarClick() {
     setEditAvatarPopupOpen(true);
@@ -155,7 +150,6 @@ function App() {
       .signin(password, email)
       .then((res) => {
         if (res) {
-          localStorage.setItem('jwt', res.token);
           setEmail(email);
           setIsLoggedIn(true);
           navigate('/', { replace: true });
@@ -169,9 +163,13 @@ function App() {
   }
 
   function handleSignout() {
-    localStorage.removeItem('jwt');
-    setEmail('');
-    setIsLoggedIn(false);
+    auth.signout()
+      .then(() => {
+        setEmail('');
+        setIsLoggedIn(false);
+        navigate('/sign-in');
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
