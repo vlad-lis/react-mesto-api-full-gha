@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.59.46
+IP 158.160.59.46
 
 Frontend https://mesto.nomoredomains.monster/
 
