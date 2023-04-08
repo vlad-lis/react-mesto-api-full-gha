@@ -6,8 +6,8 @@
 
 ## Ссылки на проект
 
-* IP 158.160.59.46
+Frontend https://mesto.nomoredomains.monster/
 
-* Frontend https://mesto.nomoredomains.monster/
+Backend https://api.mesto.nomoredomains.monster/
 
-* Backend https://api.mesto.nomoredomains.monster/
+IP 158.160.59.46
