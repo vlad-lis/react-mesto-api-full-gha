@@ -1,0 +1,9 @@
+.pop-up__input_type_image-link {
+    margin-bottom: 48px;
+}
+
+@media screen and (max-width: 767px) {
+    .pop-up__input_type_image-link {
+        margin-bottom: 45px;
+    }
+}

@@ -1,0 +1,13 @@
+.element__image {
+    grid-area: image;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 282px;
+}
+
+.element__image:hover {
+    opacity: .9;
+    transition: opacity .2s;
+}

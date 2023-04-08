@@ -1,0 +1,16 @@
+.element {
+    display: grid;
+    grid-template-areas:
+        "image image"
+        "heading like";
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: max-content 1fr;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    max-height: 361px;
+    position: relative;
+}
+
+.element:hover {
+    cursor: pointer;
+}

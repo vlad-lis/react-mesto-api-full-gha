@@ -1,0 +1,5 @@
+.pop-up__form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}

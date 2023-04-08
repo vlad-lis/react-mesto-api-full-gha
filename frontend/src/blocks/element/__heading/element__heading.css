@@ -1,0 +1,11 @@
+.element__heading {
+    grid-area: heading;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 24px;
+    font-weight: 900;
+    padding: 25px 0 26px 21px;
+    max-height: 79px;
+}
