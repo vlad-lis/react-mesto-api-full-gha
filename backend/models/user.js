@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const AuthError = require('../errors/AuthError');
-// const BadRequestError = require('../errors/BadRequest');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -42,10 +41,6 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.statics.findUserByCredentials = function findUserByCredentials(email, password) {
-  // if (!email || !password) {
-  //   throw new BadRequestError('incorrect credentials');
-  // }
-
   return this.findOne({ email }).select('+password')
     .then((user) => {
       if (!user) {

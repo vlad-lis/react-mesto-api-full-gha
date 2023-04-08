@@ -49,7 +49,7 @@ module.exports.login = (req, res, next) => {
         httpOnly: true,
         sameSite: true,
       })
-        .send({ message: 'success', token })
+        .send({ message: 'success' })
         .end();
     })
     .catch(next);

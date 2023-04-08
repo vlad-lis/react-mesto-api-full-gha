@@ -18,9 +18,9 @@ module.exports = (req, res, next) => {
       NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
     );
   } catch (err) {
-    next(new AuthError('Unauthorized'));
+    return next(new AuthError('Unauthorized'));
   }
 
   req.user = payload;
-  next();
+  return next();
 };

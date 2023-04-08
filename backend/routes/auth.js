@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { celebrate, Joi, errors } = require('celebrate');
+const { celebrate, Joi } = require('celebrate');
 const { login, createUser, logout } = require('../controllers/users');
 const { urlRegex } = require('../utils/constants');
 
@@ -21,7 +21,5 @@ router.post('/signup', celebrate({
 }), createUser);
 
 router.post('/signout', logout);
-
-router.use(errors());
 
 module.exports = router;
