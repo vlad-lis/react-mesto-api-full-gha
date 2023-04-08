@@ -88,12 +88,10 @@ class Api {
 }
 
 const api = new Api({
-    link: 'http://localhost:3000',
+    link: 'https://api.mesto.nomoredomains.monster',
     headers: {
-        // authorization: 'b4e5eaca-bb60-4b52-a5a4-33fbaf439073',
         'Content-Type': 'application/json'
     },
-    // credentials: 'include',
 });
 
 export default api;
