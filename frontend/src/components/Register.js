@@ -20,7 +20,7 @@ function Register({ onSignup }) {
 
     return (
         <form className='auth__form' onSubmit={handleSubmit}>
-            <h3 className='auth__title'>Регистрация</h3>
+            <h3 className='auth__title'>Registration</h3>
             <input
                 id='email'
                 className='auth__input'
@@ -40,10 +40,10 @@ function Register({ onSignup }) {
                 onChange={handlePasswordChange}
             />
             <button className='auth__button' type='submit'>
-                Зарегистрироваться
+                Register
             </button>
             <Link to='/sign-in' className='auth__link'>
-                Уже зарегистрировались? Войти
+                Already registered? Sign in
             </Link>
 
         </form>

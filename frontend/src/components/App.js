@@ -234,8 +234,8 @@ function App() {
           onClose={closeAllPopups}
           signupSuccess={signSuccess}
           tooltip={signSuccess
-            ? 'Вы успешно зарегистрировались!'
-            : 'Что-то пошло не так! Попробуйте еще раз.'} />
+            ? 'Registration Successful!'
+            : 'Something went wrong! Try again.'} />
 
       </div>
     </CurrentUserContext.Provider>

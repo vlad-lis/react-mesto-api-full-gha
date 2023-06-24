@@ -19,7 +19,7 @@ function Login({ onSignin }) {
 
     return (
         <form className='auth__form' onSubmit={handleSubmit}>
-            <h3 className='auth__title'>Вход</h3>
+            <h3 className='auth__title'>Sign In</h3>
             <input
                 className='auth__input'
                 type='email'
@@ -37,7 +37,7 @@ function Login({ onSignin }) {
                 onChange={handlePasswordChange}
             />
             <button className='auth__button' type='submit'>
-                Войти
+                Sign in
             </button>
         </form>
     )
