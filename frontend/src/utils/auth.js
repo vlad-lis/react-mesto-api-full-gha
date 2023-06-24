@@ -1,4 +1,7 @@
-export const BASE_URL = 'https://api.mesto.nomoredomains.monster';
+// export const BASE_URL = 'https://api.mesto.nomoredomains.monster';
+import config from "../config";
+
+const BASE_URL = config.API_BASE_URL;
 
 function renderResponse(res) {
     if (res.ok) {

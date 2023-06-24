@@ -13,7 +13,8 @@ function InfoTooltip(props) {
                 </button>
                 <img
                     className='pop-up__auth-img'
-                    src={props.signupSuccess ? success : fail} />
+                    src={props.signupSuccess ? success : fail} 
+                    alt='auth-img'/>
                 <h3 className="pop-up__heading pop-up__auth-heading">
                     {props.tooltip}
                 </h3>

@@ -1,3 +1,5 @@
+import config from '../config';
+
 class Api {
     constructor({ link, headers }) {
         this._link = link;
@@ -88,7 +90,7 @@ class Api {
 }
 
 const api = new Api({
-    link: 'https://api.mesto.nomoredomains.monster',
+    link: config.API_BASE_URL,
     headers: {
         'Content-Type': 'application/json'
     },
