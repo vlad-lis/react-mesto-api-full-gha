@@ -18,6 +18,5 @@ To install and run MongoDB community edition refer to the [official documentatio
 3. Launch the server and client via the terminal:
     * while in /backend directory, run `$ npm run start` (or `$ npm run dev` for hot-reload)  
     * while in /frontend directory, run `$ npm run start`  
-    
     Both the front-end and back-end are set to run at port 3000; accept when prompted to run on another port.
 
