@@ -14,10 +14,10 @@ Deployment links:
 <img src="./readme_images/signup.png" alt="home screenshot">  
 <img src="./readme_images/signin.png" alt="home screenshot">
 
-* After successfully signing in, users are redirected to the main page, where they can browse existing cards, add or remove likes:
+* After successfully signing in, users are redirected to the main page, where they can browse existing cards and add or remove likes:
 <img src="./readme_images/home.png" alt="home screenshot"> 
 
-* To add a new card (plus botton) or edit user information (avatar click, pencil-like button click), a few popups are available:
+* To add a new card (by clicking the plus-like button) or edit user information (by clicking on the avatar or pencil-like button), several popups are available:
 <img src="./readme_images/card.png" alt="home screenshot">  
 <img src="./readme_images/avatar.png" alt="home screenshot">  
 <img src="./readme_images/profile.png" alt="home screenshot">
